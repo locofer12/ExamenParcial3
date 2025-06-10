@@ -7,6 +7,11 @@
     border: 1px solid #ced4da; 
 } 
  
+#foto
+{
+border: 1px solid #ced4da;
+}
+
 body { 
     background-color: #f8f9fa; 
     font-family: 'Segoe UI', sans-serif; 
