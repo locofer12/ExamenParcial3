@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="content-wrapper">
-    <section class="content-header">
+]    <section class="content-header">
         <h1>Web Worker - Cálculo Intensivo</h1>
     </section>
 

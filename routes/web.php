@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\Registro\RegistroController;
 
 
 use App\Http\Controllers\Backend\Dashboard\DashboardController;
+use App\Http\Controllers\CalculoController;
 
 
 // --- LOGIN ---
@@ -57,4 +58,5 @@ Route::get('sin-permisos', [ControlController::class,'indexSinPermiso'])->name('
 
 Route::get('/admin/dashboard', [DashboardController::class,'vistaDashboard'])->name('admin.dashboard.index');
 
-
+// --- CALCULO WEB WORKER ---
+Route::get('/calculo', [CalculoController::class,'mostrarWorker'])->name('calculo.mostrarWorker');
