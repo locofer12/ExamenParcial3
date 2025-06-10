@@ -31,7 +31,8 @@
                 <div id="map" class="rounded"></div>
             </div>
         </div>
-        
+
     </div>
 </body>
 </html>
+@vite('resources/css/app.css')
