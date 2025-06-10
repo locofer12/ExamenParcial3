@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="content-wrapper">
-]    <section class="content-header">
+    <section class="content-header">
         <h1>Web Worker - Cálculo Intensivo</h1>
     </section>
 
@@ -29,7 +29,7 @@
         resultadoDiv.innerHTML = "Calculando...";
 
         if (typeof(Worker) !== "undefined") {
-            const worker = new Worker("{{ asset('js/worker.js') }}");
+            const worker = new Worker("{{ asset('js/webworker/worker.js') }}");
 
             worker.onmessage = function(e) {
                 if (e.data.error) {

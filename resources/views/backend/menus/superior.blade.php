@@ -21,5 +21,5 @@
 </head>
 <body class="hold-transition sidebar-mini">
 @yield('content')
-
+@yield('archivos-js')
 
