@@ -50,6 +50,25 @@
                 </button>
             </div>
         </div>
+<!-- 2. Canvas de dibujo -->
+
+<!-- 3. Video desde camara -->
+        <div class="card mb-5 shadow-sm">
+            <div class="card-header bg-success text-white">
+                <i class="bi bi-camera-video-fill"></i> Cámara Web
+            </div>
+            <div class="card-body">
+                <p>Captura una imagen desde tu cámara:</p>
+
+                <video id="video" width="320" height="240" autoplay class="rounded border mb-3"></video><br>
+
+                <button onclick="tomarFoto()" class="btn btn-outline-success mb-3">
+                    <i class="bi bi-camera-fill"></i> Tomar Foto
+                </button><br>
+
+                <canvas id="foto" width="320" height="240" class="rounded"></canvas>
+            </div>
+        </div>
 
     </div>
 </body>
