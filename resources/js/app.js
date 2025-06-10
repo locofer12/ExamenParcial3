@@ -18,3 +18,49 @@ if (navigator.geolocation) {
 } else {
     alert("Tu navegador no soporta geolocalización.");
 }
+
+// Canvas 
+const canvas = document.getElementById('canvas'); 
+const ctx = canvas.getContext('2d'); 
+
+ctx.fillStyle = "#ffffff"; 
+ctx.fillRect(0, 0, canvas.width, canvas.height); 
+ 
+let dibujando = false; 
+ 
+canvas.addEventListener('mousedown', () => { 
+    dibujando = true; 
+    ctx.beginPath(); 
+}); 
+canvas.addEventListener('mouseup', () => { 
+    dibujando = false; 
+    ctx.closePath(); 
+}); 
+canvas.addEventListener('mousemove', dibujar); 
+ 
+function dibujar(e) { 
+    if (!dibujando) return; 
+    ctx.lineWidth = 2; 
+    ctx.lineCap = 'round'; 
+    ctx.strokeStyle = 'black'; 
+    ctx.lineTo(e.offsetX, e.offsetY); 
+    ctx.stroke(); 
+    ctx.beginPath(); 
+    ctx.moveTo(e.offsetX, e.offsetY); 
+} 
+
+function guardarCanvas() { 
+    const link = document.createElement('a'); 
+    link.download = 'dibujo.jpg'; 
+    link.href = canvas.toDataURL('image/jpeg'); 
+    link.click(); 
+}
+
+function limpiarCanvas() {
+    // Limpia el canvas llenándolo de blanco
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+document.querySelector('#boton-guardar').addEventListener('click', guardarCanvas);
+document.querySelector('#boton-limpiar').addEventListener('click', limpiarCanvas);
