@@ -62,5 +62,18 @@ function limpiarCanvas() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
+// Video
+const video = document.getElementById('video');
+const fotoCanvas = document.getElementById('foto');
+const fotoCtx = fotoCanvas.getContext('2d');
+
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(stream => video.srcObject = stream)
+  .catch(error => alert('No se pudo acceder a la cámara: ' + error.message));
+function tomarFoto() {
+  fotoCtx.drawImage(video, 0, 0, fotoCanvas.width, fotoCanvas.height);
+}
+
+
 document.querySelector('#boton-guardar').addEventListener('click', guardarCanvas);
 document.querySelector('#boton-limpiar').addEventListener('click', limpiarCanvas);
