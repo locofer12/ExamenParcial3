@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>APIs en Laravel</title>
@@ -29,6 +30,24 @@
                     <li><strong>Longitud:</strong> <span id="lon"></span></li>
                 </ul>
                 <div id="map" class="rounded"></div>
+            </div>
+        </div>
+
+        <!-- 2. Canvas de dibujo -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-secondary text-white">
+                <i class="bi bi-pencil-fill"></i> Dibujo en Canvas
+            </div>
+            <div class="card-body">
+                <p>Usa el mouse para dibujar líneas negras:</p>
+                <canvas id="canvas" width="500" height="300" class="rounded mb-3"></canvas><br>
+
+                <button id="boton-guardar" class="btn btn-outline-primary">
+                    <i class="bi bi-save"></i> Guardar como JPG
+                </button>
+                <button id="boton-limpiar" class="btn btn-outline-danger">
+                    <i class="bi bi-eraser"></i> Limpiar Canvas
+                </button>
             </div>
         </div>
 
