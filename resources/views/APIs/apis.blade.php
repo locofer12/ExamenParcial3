@@ -53,11 +53,11 @@
 <!-- 2. Canvas de dibujo -->
 
 <!-- 3. Video desde camara -->
-        <div class="card mb-5 shadow-sm">
-            <div class="card-header bg-success text-white">
+        <div class="card mb-5 shadow-sm ">
+            <div class="card-header bg-negro-mate">
                 <i class="bi bi-camera-video-fill"></i> Cámara Web
             </div>
-            <div class="card-body">
+            <div class="card-body text-center">
                 <p>Captura una imagen desde tu cámara:</p>
 
                 <video id="video" width="320" height="240" autoplay class="rounded border mb-3"></video><br>
