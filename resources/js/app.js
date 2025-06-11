@@ -72,6 +72,10 @@ navigator.mediaDevices.getUserMedia({ video: true })
   .catch(error => alert('No se pudo acceder a la cámara: ' + error.message));
 function tomarFoto() {
   fotoCtx.drawImage(video, 0, 0, fotoCanvas.width, fotoCanvas.height);
+  const link = document.createElement('a'); 
+  link.download = 'captura.jpg'; 
+  link.href = fotoCanvas.toDataURL('image/jpeg'); 
+  link.click(); 
 }
 
 
