@@ -54,14 +54,16 @@
                         <button id="borrador" class="btn btn-outline-secondary btn-sm">
                             <i class="bi bi-eraser-fill"></i> Borrador
                         </button> 
-                    </div>
-                </div>
-                <button id="boton-guardar" class="btn btn-outline-primary">
+
+                        <button id="boton-guardar" class="btn btn-outline-primary">
                     <i class="bi bi-save"></i> Guardar como JPG
                 </button>
                 <button id="boton-limpiar" class="btn btn-outline-danger">
                     <i class="bi bi-eraser"></i> Limpiar Canvas
                 </button>
+                    </div>
+                </div>
+                
             </div>
         </div>
 
