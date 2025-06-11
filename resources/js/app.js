@@ -96,7 +96,12 @@ function tomarFoto() {
   link.click(); 
 }
 
+function limpiarCanvasFoto() {
+  fotoCtx.clearRect(0, 0, fotoCanvas.width, fotoCanvas.height);
+}
+
 
 document.querySelector('#boton-guardar').addEventListener('click', guardarCanvas);
 document.querySelector('#boton-limpiar').addEventListener('click', limpiarCanvas);
 document.querySelector('#boton-video').addEventListener('click', tomarFoto);
+document.querySelector('#boton-limpiar-foto').addEventListener('click', limpiarCanvasFoto);
