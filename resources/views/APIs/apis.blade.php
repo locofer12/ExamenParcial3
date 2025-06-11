@@ -80,6 +80,10 @@
                 </button>
                 <button id="boton-limpiar-foto" class="btn btn-outline-danger mb-3">
                     <i class="bi bi-x-circle-fill"></i> Borrar Foto
+                </button>
+                
+                <button id="boton-guardar-foto" class="btn btn-outline-primary mb-3 d-none">
+                    <i class="bi bi-download"></i> Guardar Foto
                 </button><br>
 
                 <canvas id="foto" width="320" height="240" class="rounded"></canvas>
