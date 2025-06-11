@@ -50,9 +50,8 @@
                 </button>
             </div>
         </div>
-<!-- 2. Canvas de dibujo -->
 
-<!-- 3. Video desde camara -->
+        <!-- 3. Video desde camara -->
         <div class="card mb-5 shadow-sm ">
             <div class="card-header bg-negro-mate">
                 <i class="bi bi-camera-video-fill"></i> Cámara Web
@@ -62,7 +61,7 @@
 
                 <video id="video" width="320" height="240" autoplay class="rounded border mb-3"></video><br>
 
-                <button onclick="tomarFoto()" class="btn btn-outline-success mb-3">
+                <button id="boton-video" class="btn btn-outline-success mb-3">
                     <i class="bi bi-camera-fill"></i> Tomar Foto
                 </button><br>
 

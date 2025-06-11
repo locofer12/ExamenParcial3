@@ -77,3 +77,4 @@ function tomarFoto() {
 
 document.querySelector('#boton-guardar').addEventListener('click', guardarCanvas);
 document.querySelector('#boton-limpiar').addEventListener('click', limpiarCanvas);
+document.querySelector('#boton-video').addEventListener('click', tomarFoto);
