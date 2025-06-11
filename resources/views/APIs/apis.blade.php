@@ -39,7 +39,7 @@
                 <i class="bi bi-pencil-fill"></i> Dibujo en Canvas
             </div>
             <div class="card-body">
-                <p>Usa el mouse para dibujar líneas del color que desees:</p>
+                <p>Usa el mouse para dibujar puedes cambiar el color, ajustar el grosor del trazo y ¡usa el borrador si te equivocas!.</p>
                 <div class="d-flex align-items-start gap-4 mb-3">
                     <canvas id="canvas" width="500" height="300" class="rounded mb-3"></canvas><br>
                     <div id="herramientas" class="d-flex flex-column gap-3">
