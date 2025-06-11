@@ -88,12 +88,19 @@ const fotoCtx = fotoCanvas.getContext('2d');
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(stream => video.srcObject = stream)
   .catch(error => alert('No se pudo acceder a la cámara: ' + error.message));
+
 function tomarFoto() {
   fotoCtx.drawImage(video, 0, 0, fotoCanvas.width, fotoCanvas.height);
-  const link = document.createElement('a'); 
-  link.download = 'captura.jpg'; 
-  link.href = fotoCanvas.toDataURL('image/jpeg'); 
-  link.click(); 
+
+  // Mostrar el botón de guardar
+  document.getElementById('boton-guardar-foto').classList.remove('d-none');
+}
+
+function guardarCanvasFoto() {
+    const link = document.createElement('a'); 
+    link.download = 'captura.jpg'; 
+    link.href = fotoCanvas.toDataURL('image/jpeg'); 
+    link.click();
 }
 
 function limpiarCanvasFoto() {
@@ -105,3 +112,4 @@ document.querySelector('#boton-guardar').addEventListener('click', guardarCanvas
 document.querySelector('#boton-limpiar').addEventListener('click', limpiarCanvas);
 document.querySelector('#boton-video').addEventListener('click', tomarFoto);
 document.querySelector('#boton-limpiar-foto').addEventListener('click', limpiarCanvasFoto);
+document.getElementById('boton-guardar-foto').addEventListener('click', guardarCanvasFoto);
