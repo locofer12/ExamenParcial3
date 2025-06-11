@@ -94,6 +94,9 @@ function tomarFoto() {
 
   // Mostrar el botón de guardar
   document.getElementById('boton-guardar-foto').classList.remove('d-none');
+
+  // Mostrar el botón de limpiar
+  document.getElementById('boton-limpiar-foto').classList.remove('d-none');
 }
 
 function guardarCanvasFoto() {
@@ -107,6 +110,8 @@ function limpiarCanvasFoto() {
   fotoCtx.clearRect(0, 0, fotoCanvas.width, fotoCanvas.height);
     // Ocultar el botón de guardar
     document.getElementById('boton-guardar-foto').classList.add('d-none');
+    // Ocultar boton de limpiar
+    document.getElementById('boton-limpiar-foto').classList.add('d-none');
 }
 
 

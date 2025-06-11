@@ -78,7 +78,7 @@
                 <button id="boton-video" class="btn btn-outline-success mb-3">
                     <i class="bi bi-camera-fill"></i> Tomar Foto
                 </button>
-                <button id="boton-limpiar-foto" class="btn btn-outline-danger mb-3">
+                <button id="boton-limpiar-foto" class="btn btn-outline-danger mb-3 d-none">
                     <i class="bi bi-x-circle-fill"></i> Borrar Foto
                 </button>
                 
