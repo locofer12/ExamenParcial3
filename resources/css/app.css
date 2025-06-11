@@ -7,6 +7,10 @@
     border: 1px solid #ced4da; 
 } 
  
+#herramientas {
+     min-width: 150px;
+}
+
 #foto
 
 .bg-negro-mate {

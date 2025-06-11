@@ -22,6 +22,13 @@ if (navigator.geolocation) {
 // Canvas 
 const canvas = document.getElementById('canvas'); 
 const ctx = canvas.getContext('2d'); 
+const colorPicker = document.getElementById('colorPicker');
+const grosor = document.getElementById('grosor');
+const borradorBtn = document.getElementById('borrador');
+
+let colorActual = colorPicker.value;
+let grosorActual = parseInt(grosor.value);
+let modoBorrador = false;
 
 ctx.fillStyle = "#ffffff"; 
 ctx.fillRect(0, 0, canvas.width, canvas.height); 
@@ -38,11 +45,22 @@ canvas.addEventListener('mouseup', () => {
 }); 
 canvas.addEventListener('mousemove', dibujar); 
  
+colorPicker.addEventListener('input', () => {
+    colorActual = colorPicker.value;
+    modoBorrador = false;
+});
+grosor.addEventListener('input', () => {
+    grosorActual = parseInt(grosor.value);
+});
+borradorBtn.addEventListener('click', () => {
+    modoBorrador = true;
+});
+
 function dibujar(e) { 
     if (!dibujando) return; 
-    ctx.lineWidth = 2; 
+    ctx.lineWidth = grosorActual; 
     ctx.lineCap = 'round'; 
-    ctx.strokeStyle = 'black'; 
+    ctx.strokeStyle = modoBorrador ? '#ffffff' : colorActual; 
     ctx.lineTo(e.offsetX, e.offsetY); 
     ctx.stroke(); 
     ctx.beginPath(); 

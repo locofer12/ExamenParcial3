@@ -39,9 +39,23 @@
                 <i class="bi bi-pencil-fill"></i> Dibujo en Canvas
             </div>
             <div class="card-body">
-                <p>Usa el mouse para dibujar líneas negras:</p>
-                <canvas id="canvas" width="500" height="300" class="rounded mb-3"></canvas><br>
-
+                <p>Usa el mouse para dibujar líneas del color que desees:</p>
+                <div class="d-flex align-items-start gap-4 mb-3">
+                    <canvas id="canvas" width="500" height="300" class="rounded mb-3"></canvas><br>
+                    <div id="herramientas" class="d-flex flex-column gap-3">
+                        <div>   
+                            <label for="colorPicker">Color:</label>
+                            <input type="color" id="colorPicker" value="#000000">
+                        </div> 
+                        <div> 
+                            <label for="grosor">Grosor:</label>
+                            <input type="range" id="grosor" min="1" max="20" value="2">
+                        </div> 
+                        <button id="borrador" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-eraser-fill"></i> Borrador
+                        </button> 
+                    </div>
+                </div>
                 <button id="boton-guardar" class="btn btn-outline-primary">
                     <i class="bi bi-save"></i> Guardar como JPG
                 </button>
