@@ -105,6 +105,8 @@ function guardarCanvasFoto() {
 
 function limpiarCanvasFoto() {
   fotoCtx.clearRect(0, 0, fotoCanvas.width, fotoCanvas.height);
+    // Ocultar el botón de guardar
+    document.getElementById('boton-guardar-foto').classList.add('d-none');
 }
 
 
