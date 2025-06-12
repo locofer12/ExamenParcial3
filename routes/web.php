@@ -60,3 +60,6 @@ Route::get('/admin/dashboard', [DashboardController::class,'vistaDashboard'])->n
 
 // --- CALCULO WEB WORKER ---
 Route::get('/calculo', [CalculoController::class,'mostrarWorker'])->name('calculo.mostrarWorker');
+//APIs
+Route::get('/apis', function () { return view('APIs.apis');})->name('apis.view');
+

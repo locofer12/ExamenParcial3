@@ -1,0 +1,25 @@
+#map {
+    height: 300px;
+}
+
+#canvas 
+{ 
+    border: 1px solid #ced4da; 
+} 
+ 
+#herramientas {
+     min-width: 150px;
+}
+
+#foto
+
+.bg-negro-mate {
+    background-color: #1c1c1c; /* Negro mate */
+    color: white;
+}
+
+
+body { 
+    background-color: #f8f9fa; 
+    font-family: 'Segoe UI', sans-serif; 
+}
