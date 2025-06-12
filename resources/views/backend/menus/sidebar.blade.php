@@ -41,6 +41,21 @@
                  </li>
                 @endcan
 
+                <!-- calculo -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+                        <li class="nav-item">
+                            <a href="{{ route('calculo.mostrarWorker') }}" target="frameprincipal" class="nav-link nav-link">                               
+                            <i class="nav-icon fas fa-car"></i>
+                                <p>
+                                    Calculo
+                                 </p>
+                            </a>
+                        </li>
+                    </ul>
+
+                </nav>
+
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
                         <li class="nav-item">
@@ -52,7 +67,8 @@
                             </a>
                         </li>
                     </ul>
-                 </nav>
+
+                </nav>
 
             </ul>
         </nav>
