@@ -1,99 +1,167 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <title>Panel</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!--  CSS -->
     <link rel="stylesheet" href="{{ asset('css/login/bootstrap.min.css') }}">
-
-    <!-- icono del sistema -->
-    <link href="{{ asset('images/icono-sistemalogo.png') }}" rel="icon">
-    <!-- libreria -->
     <link href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}" type="text/css" rel="stylesheet" />
-
-    <!-- estilo de toast -->
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
-    <!-- estilo de sweet -->
     <link href="{{ asset('css/sweetalert2.min.css') }}" rel="stylesheet">
-
     <link href="{{ asset('css/buttons_estilo.css') }}" rel="stylesheet">
+    <link href="{{ asset('images/icono-sistemalogo.png') }}" rel="icon">
 
 
     <style>
-        html, body {
-            height: 100%;
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --success-color: #10b981;
+            --border-radius: 16px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            background-image: url({{ asset('images/fondo3.jpg') }});
-        }
-
-        .demo-container {
-            height: 100%;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
-            justify-content: center;
             align-items: center;
-        }
-        .btn-lg {
-            padding: 12px 26px;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        ::placeholder {
-            font-size:14px;
-            letter-spacing:0.5px;
+            justify-content: center;
         }
 
-        .form-control-lg {
-            font-size: 16px;
-            padding: 25px 20px;
+        .login-container {
+            width: 100%;
+            max-width: 450px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
-        .font-500{
-            font-weight:500;
+
+        .login-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            animation: fadeInUp 0.6s ease-out;
         }
-        .image-size-small{
-            width:200px;
-            margin:0 auto;
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 2rem;
         }
-        .image-size-small img{
-            width:200px;
-            margin-bottom:-70px;
+
+        .logo-container img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .form-title {
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-control {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1rem;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 1rem;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(99, 102, 241, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 1rem;
+            }
+            
+            .login-card {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
 
 <body>
-<div class="container">
-    <div>
-        <div class="demo-container" style="margin-top: 30px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-12 mx-auto">
-
-                        <div class="p-5 bg-white rounded shadow-lg">
-                            <div class="text-center image-size-small position-relative">
-                                <img src="{{ asset('images/logo.png') }}" class=" p-2">
-                            </div>
-                            <h3 class="mb-2 text-center pt-5"><strong>&nbsp;</strong></h3>
-                            <p class="text-center lead" style="font-weight: bold">BASE</p>
-                            <form>
-                                <label style="margin-top: 10px" class="font-500">Usuario</label>
-                                <input class="form-control form-control-lg mb-3" id="usuario" autocomplete="off" type="text">
-                                <label class="font-500">Contraseña</label>
-                                <input class="form-control form-control-lg" id="password" type="password">
-
-                                <input type="button" value="ACCEDER" style="margin-top: 25px; width: 100%; font-weight: bold" onclick="login()" class="button button-uppercase button-primary button-pill">
-                            </form>
-                        </div>
-                    </div>
-                </div>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-container">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                <h1 class="form-title">BASE</h1>
             </div>
+
+            <form>
+                <div class="mb-4">
+                    <label class="form-label" for="usuario">Usuario</label>
+                    <input class="form-control" id="usuario" type="text" autocomplete="off" placeholder="Ingresa tu usuario">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label" for="password">Contraseña</label>
+                    <input class="form-control" id="password" type="password" placeholder="Ingresa tu contraseña">
+                </div>
+
+                <button type="button" class="login-btn" onclick="login()">
+                    ACCEDER
+                </button>
+            </form>
         </div>
     </div>
-</div>
 
 <script src="{{ asset('js/jquery.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/toastr.min.js') }}" type="text/javascript"></script>
