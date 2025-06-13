@@ -390,8 +390,6 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, #b5f6ff, #3889f1);
-    font-family: "Arial", sans-serif;
-    overflow: hidden;
 }
 
 .slider-container {
