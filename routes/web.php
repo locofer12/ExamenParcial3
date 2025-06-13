@@ -63,3 +63,8 @@ Route::get('/calculo', [CalculoController::class,'mostrarWorker'])->name('calcul
 //APIs
 Route::get('/apis', function () { return view('APIs.apis');})->name('apis.view');
 
+// slider
+Route::get('/slider', function () {
+    return view('slider');
+})->name('slider.show');
+
