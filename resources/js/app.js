@@ -120,3 +120,14 @@ document.querySelector('#boton-limpiar').addEventListener('click', limpiarCanvas
 document.querySelector('#boton-video').addEventListener('click', tomarFoto);
 document.querySelector('#boton-limpiar-foto').addEventListener('click', limpiarCanvasFoto);
 document.getElementById('boton-guardar-foto').addEventListener('click', guardarCanvasFoto);
+
+const canvasToSize = document.getElementById("canvas");
+
+ // Ajustar tamaño interno al tamaño visual real
+function resizeCanvas() {
+    canvasToSize.width = canvas.clientWidth;
+    canvasToSize.height = canvas.clientHeight;
+}
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
